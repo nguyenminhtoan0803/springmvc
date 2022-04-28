@@ -2,10 +2,12 @@ package org.toannguyen.dao;
 
 import java.util.List;
 
-import com.laptrinhjavaweb.model.CategoryModel;
+import org.toannguyen.model.CategoryModel;
 
-public interface ICategoryDAO extends GenericDAO<CategoryModel> {
-	List<CategoryModel> findAll();
-	CategoryModel findOne(long id);
-	CategoryModel findOneByCode(String code);
-}
+
+
+/*
+ * public interface ICategoryDAO extends GenericDAO<CategoryModel> {
+ * List<CategoryModel> findAll(); CategoryModel findOne(long id); CategoryModel
+ * findOneByCode(String code); }
+ */
