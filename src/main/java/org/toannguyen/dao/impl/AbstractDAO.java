@@ -9,21 +9,25 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import org.toannguyen.dao.GenericDAO;
 import org.toannguyen.mapper.RowMapper;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
 
-	ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
+	//ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
 
 	public Connection getConnection() {
 		try {
-			Class.forName(resourceBundle.getString("driverName"));
-			String url = resourceBundle.getString("url");
-			String user = resourceBundle.getString("user");
-			String password = resourceBundle.getString("password");
+//			Class.forName(resourceBundle.getString("driverName"));
+//			String url = resourceBundle.getString("url");
+//			String user = resourceBundle.getString("user");
+//			String password = resourceBundle.getString("password");
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/new_servlet";
+			String user = "root";
+			String password = "";
 			return DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			System.out.print(e.getMessage());
@@ -114,14 +118,10 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			}
 		} finally {
 			try {
-				if (connection != null) {
-					connection.close();
-				}
-				if (statement != null) {
-					statement.close();
-				}
-			} catch (SQLException e2) {
-				e2.printStackTrace();
+				disConnection(null, statement, connection);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}
@@ -149,25 +149,19 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				try {
 					connection.rollback();
 				} catch (SQLException e1) {
-					e1.printStackTrace();
+					e.getMessage();
+					
 				}
 			}
 		} finally {
 			try {
-				if (connection != null) {
-					connection.close();
-				}
-				if (statement != null) {
-					statement.close();
-				}
-				if (resultSet != null) {
-					resultSet.close();
-				}
-			} catch (SQLException e2) {
-				e2.printStackTrace();
+				disConnection(resultSet, statement, connection);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.getMessage();
 			}
 		}
-		return null;
+		return null;	
 	}
 
 	@Override
@@ -186,20 +180,14 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			}
 			return count;
 		} catch (SQLException e) {
+			e.getMessage();
 			return 0;
 		} finally {
 			try {
-				if (connection != null) {
-					connection.close();
-				}
-				if (statement != null) {
-					statement.close();
-				}
-				if (resultSet != null) {
-					resultSet.close();
-				}
+				disConnection(resultSet, statement, connection);
 			} catch (SQLException e) {
-				return 0;
+				// TODO Auto-generated catch block
+				e.getMessage();
 			}
 		}
 	}
