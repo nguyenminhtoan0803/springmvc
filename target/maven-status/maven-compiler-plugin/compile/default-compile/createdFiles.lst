@@ -3,6 +3,7 @@ org\toannguyen\paging\Pageble.class
 org\toannguyen\sort\Sorter.class
 org\toannguyen\model\AbstractModel.class
 org\toannguyen\controller\web\HomeController.class
+org\toannguyen\controller\admin\NewController.class
 org\toannguyen\dao\impl\NewDAO.class
 org\toannguyen\controller\admin\HomeController.class
 org\toannguyen\dao\impl\CategoryDAO.class
