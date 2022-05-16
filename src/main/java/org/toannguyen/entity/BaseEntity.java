@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class BaseEntity {
+public abstract class BaseEntity {
 
 	@Id // field la primary key va not null
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment

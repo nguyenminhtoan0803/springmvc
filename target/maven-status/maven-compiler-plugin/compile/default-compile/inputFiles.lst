@@ -9,12 +9,15 @@ C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\mapper\C
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\controller\admin\HomeController.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\service\impl\NewService.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\sort\Sorter.java
+C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\entity\BaseEntity.java
+C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\entity\UserEntity.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\service\impl\CategoryService.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\entity\NewEntity.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\dao\impl\AbstractDAO.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\model\CategoryModel.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\mapper\NewMapper.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\service\INewService.java
+C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\entity\RoleEntity.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\config\JPAConfig.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\mapper\RowMapper.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\controller\admin\NewController.java

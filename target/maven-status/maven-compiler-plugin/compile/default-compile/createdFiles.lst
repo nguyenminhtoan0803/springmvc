@@ -13,6 +13,7 @@ org\toannguyen\dao\INewDAO.class
 org\toannguyen\service\ICategoryService.class
 org\toannguyen\paging\PageRequest.class
 org\toannguyen\dao\GenericDAO.class
+org\toannguyen\entity\RoleEntity.class
 org\toannguyen\mapper\NewMapper.class
 org\toannguyen\paging\Pageble.class
 org\toannguyen\entity\NewEntity.class
@@ -21,5 +22,7 @@ org\toannguyen\model\AbstractModel.class
 org\toannguyen\mapper\CategoryMapper.class
 org\toannguyen\model\CategoryModel.class
 org\toannguyen\service\INewService.class
+org\toannguyen\entity\BaseEntity.class
+org\toannguyen\entity\UserEntity.class
 org\toannguyen\dao\ICategoryDAO.class
 org\toannguyen\mapper\RowMapper.class
