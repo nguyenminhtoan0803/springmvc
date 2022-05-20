@@ -61,9 +61,9 @@ public class JPAConfig {
 
 		Properties properties = new Properties();
 		
-		properties.setProperty("hibernate.hbm2ddl.auto", "create");
+		//properties.setProperty("hibernate.hbm2ddl.auto", "create");
 		//properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");// tu dong dua theo entity ma generate ra table
-		// properties.setProperty("hibernate.hbm2ddl.auto", "none");
+		 properties.setProperty("hibernate.hbm2ddl.auto", "none");
 
 		return properties;
 	}
