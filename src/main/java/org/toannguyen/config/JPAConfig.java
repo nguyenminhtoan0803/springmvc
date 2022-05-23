@@ -64,7 +64,8 @@ public class JPAConfig {
 		//properties.setProperty("hibernate.hbm2ddl.auto", "create");
 		//properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");// tu dong dua theo entity ma generate ra table
 		 properties.setProperty("hibernate.hbm2ddl.auto", "none");
-
+		 
+		 properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
 		return properties;
 	}
 }

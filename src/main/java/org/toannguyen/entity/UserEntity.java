@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -26,8 +27,10 @@ public class UserEntity extends BaseEntity {
 	@Column(name = "status")
 	private Integer status;
 
-	@ManyToMany()
-	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "userid"), inverseJoinColumns = @JoinColumn(name = "roleid"))
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "user_role",
+				joinColumns = @JoinColumn(name = "userid"), 
+				inverseJoinColumns = @JoinColumn(name = "roleid"))
 
 	private List<RoleEntity> roles = new ArrayList<>();
 

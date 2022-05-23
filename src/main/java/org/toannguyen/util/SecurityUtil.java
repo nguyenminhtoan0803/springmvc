@@ -5,9 +5,19 @@ import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.toannguyen.dto.MyUser;
 
 public class SecurityUtil {
 
+	public static MyUser getPrincial() {
+		MyUser myUser = (MyUser)(SecurityContextHolder
+								.getContext()
+								.getAuthentication()
+								.getPrincipal());
+		return myUser;
+	}
+	
+	
 	@SuppressWarnings("unchecked")
 	public static List<String> getAuthorities() {
 		
