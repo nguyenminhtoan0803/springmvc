@@ -15,8 +15,10 @@ C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\service\
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\service\impl\NewService.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\sort\Sorter.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\entity\BaseEntity.java
+C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\api\web\NewAPI.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\entity\UserEntity.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\service\impl\CategoryService.java
+C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\api\admin\NewAPI.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\entity\NewEntity.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\dao\impl\AbstractDAO.java
 C:\Users\Admin\eclipse-workspace\springmvc\src\main\java\org\toannguyen\model\CategoryModel.java

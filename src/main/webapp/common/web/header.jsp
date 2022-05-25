@@ -16,15 +16,15 @@
 				<li class="nav-item">
 					<a class="nav-link active"
 					aria-current="page" href="<c:url value='/trang-chu'/>">
-						<span class="sr-only">{current}</span>
+						<span class="sr-only">Home</span>
 					</a>
 				</li>
-				<security:authorize access="isAnonymus()" >
-					<li class="nav-item"><a class="nav-link" href="#!">Đăng nhập</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">Đăng ký</a></li>
+				<security:authorize access = "isAnonymous()">
+					<li class="nav-item"><a class="nav-link" href="#">Đăng nhập</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Đăng ký</a></li>
 				</security:authorize>
 				<security:authorize access="isAuthenticated()" >
-					<li class="nav-item"><a class="nav-link" href="#!">Wellcome <%=SecurityUtil.getPrincial() %></a></li>
+					<li class="nav-item"><a class="nav-link" href="#!">Wellcome <%=SecurityUtil.getPrincial().getFullName() %></a></li>
 					<li class="nav-item"><a class="nav-link" href="<c:url value='/thoat' />">thoat</a></li>
 				</security:authorize>
 				

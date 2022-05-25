@@ -16,12 +16,14 @@ org\toannguyen\repository\NewRepository.class
 org\toannguyen\dao\INewDAO.class
 org\toannguyen\dto\MyUser.class
 org\toannguyen\service\ICategoryService.class
+org\toannguyen\api\admin\NewAPI.class
 org\toannguyen\paging\PageRequest.class
 org\toannguyen\dao\GenericDAO.class
 org\toannguyen\entity\RoleEntity.class
 org\toannguyen\mapper\NewMapper.class
 org\toannguyen\paging\Pageble.class
 org\toannguyen\constant\SystemConstant.class
+org\toannguyen\api\web\NewAPI.class
 org\toannguyen\entity\NewEntity.class
 org\toannguyen\sort\Sorter.class
 org\toannguyen\model\AbstractModel.class
