@@ -8,5 +8,6 @@
 		<class>org.toannguyen.entity.NewEntity</class>
 		<class>org.toannguyen.entity.UserEntity</class>
 		<class>org.toannguyen.entity.RoleEntity</class>
+		<class>org.toannguyen.entity.CategoryEntity</class>
 	</persistence-unit>
 </persistence>

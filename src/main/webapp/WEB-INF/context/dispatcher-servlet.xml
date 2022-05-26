@@ -23,7 +23,7 @@
 
 	<!-- biết controller nằm ở đâu -->
 	<context:component-scan
-		base-package="org.toannguyen.controller" />
+		base-package="org.toannguyen.controller, org.toannguyen.api" />
 
 	<!-- để có thể dùng annotation mvc thì phải định nghĩa tại đây -->
 	<mvc:annotation-driven />
