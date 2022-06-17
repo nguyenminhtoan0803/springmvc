@@ -21,18 +21,18 @@ public class NewService implements INewService {
 	public List<NewDTO> findAll() {
 
 		ModelMapper modelMapper = new ModelMapper();
-		
+
 		List<NewEntity> entities = new ArrayList<>();
-		
+
 		entities = newRepository.findAll();
-		
+
 		List<NewDTO> newDTOs = new ArrayList<>();
-		
-		for(NewEntity items : entities) {
+
+		for (NewEntity items : entities) {
 			NewDTO newDTO = modelMapper.map(items, NewDTO.class);
 			newDTOs.add(newDTO);
 		}
-		
+
 		return newDTOs;
 	}
 
