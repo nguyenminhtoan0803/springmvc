@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp"%>
 <c:url var="APIurl" value="/api-admin-new"/>
-<c:url var ="NewURL" value="/admin-new"/>
 <html>
 <head>
     <title>Chỉnh sửa bài viết</title>
@@ -24,11 +23,11 @@
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-12">
-                        <c:if test="${not empty messageResponse}">
-									<div class="alert alert-${alert}">
-  										${messageResponse}
-									</div>
-						</c:if>
+                        <c:if test="${not empty message}">
+                            <div class="alert alert-${alert}">
+                                    ${message}
+                            </div>
+                        </c:if>
                         <form id="formSubmit">
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">Thể loại</label>
@@ -64,7 +63,7 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">Hình đại diện</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="thumbnail" name="thumbnail" value="${model.thumbnail}"/>
+                                    <input type="text" class="form-control" id="thumbnail" name="thumbnail" value=""/>
                                 </div>
                             </div>
                             <br/>
@@ -131,10 +130,10 @@
             data: JSON.stringify(data),
             dataType: 'json',
             success: function (result) {
-            	window.location.href = "${NewURL}?type=edit&id="+result.id+"&message=insert_success";
+                console.log(result);
             },
             error: function (error) {
-            	window.location.href = "${NewURL}?type=list&maxPageItem=2&page=1&message=error_system";
+                console.log(error);
             }
         });
     }
@@ -146,10 +145,10 @@
             data: JSON.stringify(data),
             dataType: 'json',
             success: function (result) {
-            	window.location.href = "${NewURL}?type=edit&id="+result.id+"&message=update_success";
+                console.log(result);
             },
             error: function (error) {
-            	window.location.href = "${NewURL}?type=list&maxPageItem=2&page=1&message=error_system";
+                console.log(error);
             }
         });
     }

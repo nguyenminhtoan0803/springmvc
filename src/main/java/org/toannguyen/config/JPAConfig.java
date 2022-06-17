@@ -10,43 +10,40 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableTransactionManagement // bat tinh nang quan ly transaction cho jpa
-@EnableJpaRepositories(basePackages = {"org.toannguyen.repository"})
+@EnableJpaRepositories(basePackages = {"com.laptrinhjavaweb.repository"})
+@EnableTransactionManagement
 public class JPAConfig {
-
+	
 	@Bean
-	// noi khoi tao doi tuong entity manager factory thuc thi cac cau sql
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-		LocalContainerEntityManagerFactoryBean en = new LocalContainerEntityManagerFactoryBean();// noi khoi tao entity
-																									// manager factory
-		en.setDataSource(dataSource());// tuong tu method getConnection
-		en.setPersistenceUnitName("persistence-data");
+		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+		em.setDataSource(dataSource());
+		em.setPersistenceUnitName("persistence-data");
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		en.setJpaVendorAdapter(vendorAdapter);
-		en.setJpaProperties(additionalProperties());
-		return en;
+		em.setJpaVendorAdapter(vendorAdapter);
+		em.setJpaProperties(additionalProperties());
+		return em;
 	}
-
+	
 	@Bean
 	JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
 		transactionManager.setEntityManagerFactory(entityManagerFactory);
-
 		return transactionManager;
 	}
-
+	
 	@Bean
 	public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
 		return new PersistenceExceptionTranslationPostProcessor();
 	}
-
+	
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -56,16 +53,13 @@ public class JPAConfig {
 		dataSource.setPassword("");
 		return dataSource;
 	}
-
+	
 	Properties additionalProperties() {
-
 		Properties properties = new Properties();
-		
+		//properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		//properties.setProperty("hibernate.hbm2ddl.auto", "create");
-		//properties.setProperty("hibernate.hbm2ddl.auto", "update");// tu dong dua theo entity ma generate ra table
 		properties.setProperty("hibernate.hbm2ddl.auto", "none");
-		 
-		 properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
+		properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
 		return properties;
 	}
 }

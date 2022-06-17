@@ -1,7 +1,5 @@
 package org.toannguyen.paging;
 
-import org.toannguyen.sort.Sorter;
-
 public class PageRequest implements Pageble {
 	
 	private Integer page;

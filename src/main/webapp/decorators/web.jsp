@@ -1,36 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@include file="/common/taglib.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/common/taglib.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Trang chủ</title>
-<!-- Favicon-->
-<!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
-<link rel="icon" type="image/x-icon"
-	href="<c:url  value='/template/web/assets/favicon.ico' />" />
-<!-- Core theme CSS (includes Bootstrap)-->
-<!-- <link href="css/styles.css" rel="stylesheet" /> -->
-<link href="<c:url value='/template/web/css/styles.css' />"
-	rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<link href="<c:url value='/template/web/vendor/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
+
+<!-- Custom styles for this template -->
+<link href="<c:url value='/template/web/css/small-business.css'/>" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<!-- Navigation -->
+	<%@ include file="/common/web/header.jsp" %>
 
-	<%@include file="/common/web/header.jsp"%>
+	<dec:body/>
 
-	<dec:body />
+	<!-- Footer -->
+	<%@ include file="/common/web/footer.jsp" %>
 
-	<%@include file="/common/web/footer.jsp"%>
-	<!-- Bootstrap core JS-->
-	<!-- <script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
-
-	<script
-		src="<c:url value='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' />"></script>
-	<!-- Core theme JS-->
-	<!-- <script src="js/scripts.js"></script> -->
-	<script src="<c:url value='/template/web/js/scripts.js'/>"
-		type="text/javascript"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="<c:url value='/template/web/vendor/jquery/jquery.min.js'/>"></script>
+	<script src="<c:url value='/template/web/vendor/bootstrap/js/bootstrap.bundle.min.js'/>"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package org.toannguyen.sort;
+package org.toannguyen.paging;
 
 public class Sorter {
 	

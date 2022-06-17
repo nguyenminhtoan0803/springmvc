@@ -11,11 +11,11 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-@Entity // day la mot entity
-@Table(name = "user") // dai dien table new trong database
+@Entity
+@Table(name = "user")
 public class UserEntity extends BaseEntity {
 
-	@Column(name = "username") // dai dien column trong table
+	@Column(name = "username")
 	private String userName;
 
 	@Column(name = "password")
@@ -24,14 +24,12 @@ public class UserEntity extends BaseEntity {
 	@Column(name = "fullname")
 	private String fullName;
 
-	@Column(name = "status")
+	@Column
 	private Integer status;
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_role",
-				joinColumns = @JoinColumn(name = "userid"), 
-				inverseJoinColumns = @JoinColumn(name = "roleid"))
-
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "userid"), 
+								  inverseJoinColumns = @JoinColumn(name = "roleid"))
 	private List<RoleEntity> roles = new ArrayList<>();
 
 	public String getUserName() {
